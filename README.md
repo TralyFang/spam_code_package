@@ -1,39 +1,39 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Plugins for Wrapper, you can process your existing projects step by step, complete redundant code addition, file name modification, class name prefix modification, assets resource classification.
+Or you can modify the corresponding source code to achieve your purpose.
+为马甲包而生的插件，你可以根据一步一步处理你现有的工程，完成冗余代码添加，文件名称修改，类名前缀修改，assets资源分类。
+或者可以修改相应的源码，已到达你要的目的。
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+  // 终端执行
+// flutter pub run spam_code_package:main
+// 只修改工程lib目录下的dart文件
+String libPath = 'lib';
+var current = DateTime.now();
+// print('main start...$current, ${current.millisecondsSinceEpoch} ms');
+
+// await Calculator().generateSpamCode('$libPath/ui/page/game_room/room_page');
+// 第一步：添加类似方法的冗余方法
+// await Calculator().generateSpamCode(libPath);
+// 第二步：修改文件名称
+// await Calculator().modifyFileNamePrefix(libPath);
+// 第三步：修改引用文件代码
+// 该处理并不完善，需要手动根据报错修改引用，重新生成json解析类
+// await Calculator().modifyFileNameRefPrefix(libPath);
+// 第四步：修改类名前缀
+// await Calculator().modifyClassNamePrefix3(libPath);
+// 资源分类
+// await Calculator().modifyAssetsNamePrefix(libPath);
+// await Calculator().getResourceCopy(libPath + '/ui/page/status');
+var end = DateTime.now();
+// print('main end...$end, ${end.millisecondsSinceEpoch - current.millisecondsSinceEpoch}ms');
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Have fun
